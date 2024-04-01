@@ -11,7 +11,8 @@ public class LevelManager : MonoBehaviour
     if (PlayerPrefs.GetInt("UnlockLevel") == 0)
     {
       PlayerPrefs.SetInt("UnlockLevel", 1);
-    }
+      PlayerPrefs.Save();
+        }
     
   }
   void Update()
@@ -27,6 +28,7 @@ public class LevelManager : MonoBehaviour
         buttons[i].GetComponent<Button>().interactable = true;
         Locks[i].SetActive(false);
       }
+      
     }
   public void LoadScene(int index)
   {

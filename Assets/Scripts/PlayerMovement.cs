@@ -20,7 +20,7 @@ public class PlayerMovement : MonoBehaviour
     rb=GetComponent<Rigidbody2D>();
     gm=FindObjectOfType<GameManager>();
   }
-  private void Update()
+  private void FixedUpdate()
   {
     if (gm.gameOver)
     {

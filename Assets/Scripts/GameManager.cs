@@ -14,6 +14,7 @@ public class GameManager : MonoBehaviour
   [SerializeField] GameObject gameOverPanel;
   [SerializeField] GameObject LevelCompletePanel;
   public int numberOfBricks;
+  public int currentLevel = 1;
   public bool gameOver;
 
   private void Start()
@@ -49,6 +50,7 @@ public class GameManager : MonoBehaviour
       gameOver = true;
       LevelCompletePanel.SetActive(true);
       UnlockLevelButton();
+      currentLevel++;
       Invoke("LoadNextLevel",4f);
       
     }
@@ -60,11 +62,12 @@ public class GameManager : MonoBehaviour
       PlayerPrefs.SetInt("UnlockLevel", SceneManager.GetActiveScene().buildIndex+1);
       PlayerPrefs.Save();
     }
+
   }
 
   public void LoadNextLevel()
   {
-    
+        SceneManager.LoadScene(currentLevel);
   }
   public void GameOver()
   {

@@ -17,14 +17,14 @@ public class PaddleMove : MonoBehaviour
       Destroy(other.gameObject);
     }
   }
-  void Update()
+  void FixedUpdate()
     {
     if (gm.gameOver)
     {
       return;
     }
     float Move = Input.GetAxis("Horizontal");
-    transform.Translate(Vector2.right * Move * Time.deltaTime * Speed);
+    transform.Translate(Vector2.right * Move * Speed);
 
     if (transform.position.x < LeftEdge)
     {
