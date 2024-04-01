@@ -7,17 +7,14 @@ public class PaddleMove : MonoBehaviour
   [SerializeField] private float Speed;
   [SerializeField] private float LeftEdge;
   [SerializeField] private float RightEdge;
-  public GameManager gm;
-
-  public void OnTriggerEnter2D(Collider2D other)
-  {
-    if (other.CompareTag("PowerUp"))
+    [SerializeField] AudioSource audio;
+    [SerializeField] AudioClip PowerUpEffect;
+    public GameManager gm;
+    private void Start()
     {
-      gm.UpdateLive(1);
-      Destroy(other.gameObject);
+        audio = GetComponent<AudioSource>();
     }
-  }
-  void FixedUpdate()
+    void FixedUpdate()
     {
     if (gm.gameOver)
     {
@@ -35,4 +32,14 @@ public class PaddleMove : MonoBehaviour
       transform.position = new Vector2(RightEdge, transform.position.y);
     }
   }
+    public void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.CompareTag("PowerUp"))
+        {
+            audio.clip = PowerUpEffect;
+            audio.Play();
+            gm.UpdateLive(1);
+            Destroy(other.gameObject);
+        }
+    }
 }

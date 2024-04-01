@@ -12,6 +12,10 @@ public class PlayerMovement : MonoBehaviour
   [SerializeField] Transform explosion3;
   [SerializeField] Transform explosion4;
   [SerializeField] Transform PowerUps;
+  [SerializeField] AudioSource audio;
+  [SerializeField] AudioClip BreakEffect;
+  [SerializeField] AudioClip midBreakEffect;
+  [SerializeField] AudioClip LoseEffect;
   GameManager gm;
   Rigidbody2D rb;
   public bool inPlay=false;
@@ -19,6 +23,7 @@ public class PlayerMovement : MonoBehaviour
   {
     rb=GetComponent<Rigidbody2D>();
     gm=FindObjectOfType<GameManager>();
+    audio=GetComponent<AudioSource>();
   }
   private void FixedUpdate()
   {
@@ -40,10 +45,12 @@ public class PlayerMovement : MonoBehaviour
   {
     if (collision.CompareTag("Bottom"))
     {
-      transform.position = PaddlePosition.position;
-      rb.velocity= Vector2.zero;
-      inPlay = false;
-      gm.UpdateLive(-1);
+        audio.clip = LoseEffect;
+        audio.Play();
+        transform.position = PaddlePosition.position;
+        rb.velocity= Vector2.zero;
+        inPlay = false;
+        gm.UpdateLive(-1);
     }
   }
   public void OnCollisionEnter2D(Collision2D other)
@@ -51,11 +58,17 @@ public class PlayerMovement : MonoBehaviour
     if (other.gameObject.CompareTag("Brick"))
     {
       Bricks brickScript= other.gameObject.GetComponent<Bricks>();
-      
+      if (brickScript.numberOfHit < 1)
+      {
+         audio.clip = BreakEffect;
+         audio.Play();
+      }
       if (brickScript.numberOfHit > 1)
       {
-        brickScript.AfterHitSprite();
-      }
+         brickScript.AfterHitSprite();
+         audio.clip = midBreakEffect;
+         audio.Play();
+            }
       else
       {
         int RandChance = Random.Range(1, 101);
@@ -85,6 +98,8 @@ public class PlayerMovement : MonoBehaviour
         }
         gm.UpdatenumberOfBrick();
         Destroy(other.gameObject);
+        audio.clip = BreakEffect;
+        audio.Play();
         gm.UpdateScore(brickScript.points);
       }
 
