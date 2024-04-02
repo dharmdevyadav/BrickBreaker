@@ -13,7 +13,6 @@ public class GameManager : MonoBehaviour
   [SerializeField] TextMeshProUGUI liveText;
   [SerializeField] GameObject gameOverPanel;
   [SerializeField] GameObject LevelCompletePanel;
- // LevelMenuHandler LevelMenu;
   public int numberOfBricks;
   public int currentLevel = 1;
   public bool gameOver;
@@ -24,7 +23,6 @@ public class GameManager : MonoBehaviour
     scoreText2.text = "Your Score is " + score;
     liveText.text = "Lives: " + lives;
     numberOfBricks = GameObject.FindGameObjectsWithTag("Brick").Length;
-    //LevelMenu = FindObjectOfType<LevelMenuHandler>();
     }
   public void UpdateLive(int live)
   {
@@ -90,11 +88,12 @@ public class GameManager : MonoBehaviour
   }
   public void PlayAgainExit()
   {
-    //LevelMenu.wasLevelMenuOpened= true;
+    LevelMenuHandler.wasLevelMenuOpened= true;
     SceneManager.LoadScene("MainMenu");
     gameOver = false;
     
   }
+    
   public void ExitGame()
   {
     Application.Quit();

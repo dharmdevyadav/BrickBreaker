@@ -358,6 +358,17 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 253090105}
   m_CullTransparentMesh: 1
+--- !u!114 &359832439 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3954738960140076386, guid: 8971110ef86c64347b1ecd1511aab992, type: 3}
+  m_PrefabInstance: {fileID: 1522595855}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d32558f3be3ef654e950396bad0b6f88, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &489286449
 GameObject:
   m_ObjectHideFlags: 0
@@ -566,6 +577,10 @@ PrefabInstance:
       propertyPath: liveText
       value: 
       objectReference: {fileID: 776280883}
+    - target: {fileID: 6634415489913392208, guid: 75a5e275d81a5124c8af4fb891951614, type: 3}
+      propertyPath: LevelMenu
+      value: 
+      objectReference: {fileID: 359832439}
     - target: {fileID: 6634415489913392208, guid: 75a5e275d81a5124c8af4fb891951614, type: 3}
       propertyPath: scoreText
       value: 

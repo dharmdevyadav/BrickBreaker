@@ -6,18 +6,20 @@ public class LevelMenuHandler : MonoBehaviour
 {
     public GameObject BackgroundMenu;
     public GameObject LevelMenu;
-    public bool wasLevelMenuOpened;
+    public static bool wasLevelMenuOpened = false;
 
     private void Start()
-    {
-        wasLevelMenuOpened = false;
-    }
-    private void Update()
     {
         if (wasLevelMenuOpened == true)
         {
             BackgroundMenu.SetActive(false);
             LevelMenu.SetActive(true);
         }
+    }
+
+    public void showStartMenu()
+    {
+        LevelMenu.SetActive(false);
+        BackgroundMenu.SetActive(true);
     }
 }

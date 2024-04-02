@@ -1105,6 +1105,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 529052304}
     - target: {fileID: 6634415489913392208, guid: 75a5e275d81a5124c8af4fb891951614, type: 3}
+      propertyPath: LevelMenu
+      value: 
+      objectReference: {fileID: 1662651442}
+    - target: {fileID: 6634415489913392208, guid: 75a5e275d81a5124c8af4fb891951614, type: 3}
       propertyPath: scoreText
       value: 
       objectReference: {fileID: 529052305}
@@ -1447,6 +1451,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 19d416df136a18444962ee91ea8a5db9, type: 3}
+--- !u!114 &1662651442 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3954738960140076386, guid: 8971110ef86c64347b1ecd1511aab992, type: 3}
+  m_PrefabInstance: {fileID: 613196013}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d32558f3be3ef654e950396bad0b6f88, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1814396263
 PrefabInstance:
   m_ObjectHideFlags: 0

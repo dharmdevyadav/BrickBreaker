@@ -2792,6 +2792,17 @@ MonoBehaviour:
   points: 10
   numberOfHit: 0
   BrokenImage: {fileID: 0}
+--- !u!114 &2122567139 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3954738960140076386, guid: 8971110ef86c64347b1ecd1511aab992, type: 3}
+  m_PrefabInstance: {fileID: 1279818315}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d32558f3be3ef654e950396bad0b6f88, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2146493848
 GameObject:
   m_ObjectHideFlags: 0
@@ -2994,6 +3005,10 @@ PrefabInstance:
       propertyPath: liveText
       value: 
       objectReference: {fileID: 1026682132}
+    - target: {fileID: 6634415489913392208, guid: 75a5e275d81a5124c8af4fb891951614, type: 3}
+      propertyPath: LevelMenu
+      value: 
+      objectReference: {fileID: 2122567139}
     - target: {fileID: 6634415489913392208, guid: 75a5e275d81a5124c8af4fb891951614, type: 3}
       propertyPath: scoreText
       value: 
